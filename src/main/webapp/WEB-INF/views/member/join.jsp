@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Fun Web</title>
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all">
-<link href="css/subpage.css" rel="stylesheet" type="text/css"  media="all">
-<link href="css/print.css" rel="stylesheet" type="text/css"  media="print">
-<link href="css/iphone.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/resources/css/default.css" rel="stylesheet" type="text/css" media="all">
+<link href="/resources/css/subpage.css" rel="stylesheet" type="text/css"  media="all">
+<link href="/resources/css/print.css" rel="stylesheet" type="text/css"  media="print">
+<link href="/resources/css/iphone.css" rel="stylesheet" type="text/css" media="screen">
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
@@ -47,7 +47,7 @@
 <article>
     
 <h1>Join Us</h1>
-<form name="frm" id="join" action="memberJoin.do" method="post" onsubmit="return check();">    
+<form name="frm" id="join" action="/member/join" method="post" onsubmit="return check();">    
 <fieldset>
 	<legend>Basic Info</legend>
 		<label>User ID</label> <input name="id" type="text" class="id" id="id">
@@ -93,7 +93,7 @@ $('#id').keyup(function () {
 	console.log(id);
 	
 	$.ajax({
-		url: 'joinIdDupCheckJson.do',
+		url: '/member/joinIdDupCheckJson',
 		data: {id: id},
 		success: function (data) {
 			console.log(typeof data);

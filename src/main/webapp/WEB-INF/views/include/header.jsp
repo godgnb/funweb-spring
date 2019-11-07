@@ -11,18 +11,18 @@
 	<div id="login">
 		<c:choose>
 			<c:when test="${empty id}"><%-- 세션값없음 --%>
-				<a href="memberLoginForm.do">login</a>
+				<a href="/member/login">login</a>
 			</c:when>
 			<c:otherwise><%-- 세션값있음 --%>
-				${id}님 <a href="memberLogout.do">logout</a>
+				${id}님 <a href="/member/logout">logout</a>
 			</c:otherwise>
 		</c:choose>
-		| <a href="memberJoinForm.do">Join</a>
+		| <a href="/member/join">Join</a>
 	</div>
 
 	<div class="clear"></div>
 	<div id="logo">
-		<a href="main.do"><img src="images/logo.gif" width="265"
+		<a href="main.do"><img src="/resources/images/logo.gif" width="265"
 			height="62" alt="Fun Web"></a>
 	</div>
 	<nav id="top_menu">

@@ -57,14 +57,23 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>2.0.3</version>
 		</dependency>
-		
-		<!-- log4jdbc-log4j2-jdbc4	SQL로그 보기 기능 -->
+
+		<!-- log4jdbc-log4j2-jdbc4 SQL로그 보기 기능 -->
 		<dependency>
 			<groupId>org.bgee.log4jdbc-log4j2</groupId>
 			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
 			<version>1.16</version>
 		</dependency>
-
+		
+		<!-- 
+		jackson-databind 컨트롤러 리턴타입에서 VO 또는 List를 사용가능하게 함. 
+		Gson 라이브러리와 동일한 기능 제공함.
+		-->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.10.0</version>
+		</dependency>
 
 		<!-- lombok -->
 		<dependency>

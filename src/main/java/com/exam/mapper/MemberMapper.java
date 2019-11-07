@@ -14,7 +14,7 @@ public interface MemberMapper {
 	public int countMemberById(String id);
 	
 	
-	public void insertMember(MemberVO vo);
+	public int insertMember(MemberVO vo);
 	
 	@Select("SELECT * FROM jspdb.member WHERE id = #{id}")
 	public MemberVO getMemberById(String id);
