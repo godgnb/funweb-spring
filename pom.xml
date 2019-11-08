@@ -64,11 +64,9 @@
 			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
 			<version>1.16</version>
 		</dependency>
-		
-		<!-- 
-		jackson-databind 컨트롤러 리턴타입에서 VO 또는 List를 사용가능하게 함. 
-		Gson 라이브러리와 동일한 기능 제공함.
-		-->
+
+		<!-- jackson-databind 컨트롤러 리턴타입에서 VO 또는 List를 사용가능하게 함. Gson 라이브러리와 동일한 
+			기능 제공함. -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -144,7 +142,7 @@
 					<artifactId>jmxri</artifactId>
 				</exclusion>
 			</exclusions>
-			<scope>runtime</scope>
+			<!-- <scope>runtime</scope> -->
 		</dependency>
 
 		<!-- @Inject -->

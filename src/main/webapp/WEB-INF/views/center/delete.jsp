@@ -6,10 +6,10 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Fun Web</title>
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all">
-<link href="css/subpage.css" rel="stylesheet" type="text/css"  media="all">
-<link href="css/print.css" rel="stylesheet" type="text/css"  media="print">
-<link href="css/iphone.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/resources/css/default.css" rel="stylesheet" type="text/css" media="all">
+<link href="/resources/css/subpage.css" rel="stylesheet" type="text/css"  media="all">
+<link href="/resources/css/print.css" rel="stylesheet" type="text/css"  media="print">
+<link href="/resources/css/iphone.css" rel="stylesheet" type="text/css" media="screen">
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
@@ -33,7 +33,7 @@
     
 <h1>Notice Delete</h1>
 
-<form action="delete.do" method="post" name="frm" onsubmit="return check();">
+<form action="/board/delete" method="post" name="frm" onsubmit="return check();">
 	<%-- 수정할 글번호는 눈에 안보이는 hidden 타입 입력요소 사용 --%>
 	<input type="hidden" name="pageNum" value="${pageNum}"/>
 	<input type="hidden" name="num" value="${num}"/>
@@ -48,7 +48,7 @@
 	<div id="table_search">
 		<input type="submit" value="글삭제" class="btn" />
 		<input type="reset" value="다시작성" class="btn"/>
-		<input type="button" value="목록보기" class="btn" onclick="location.href='notice.jsp?pageNum=${pageNum}';"/>
+		<input type="button" value="목록보기" class="btn" onclick="location.href='/board/list?pageNum=${pageNum}';"/>
 	</div>
 </form>
 

@@ -6,10 +6,10 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Fun Web</title>
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all">
-<link href="css/subpage.css" rel="stylesheet" type="text/css"  media="all">
-<link href="css/print.css" rel="stylesheet" type="text/css"  media="print">
-<link href="css/iphone.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/resources/css/default.css" rel="stylesheet" type="text/css" media="all">
+<link href="/resources/css/subpage.css" rel="stylesheet" type="text/css"  media="all">
+<link href="/resources/css/print.css" rel="stylesheet" type="text/css"  media="print">
+<link href="/resources/css/iphone.css" rel="stylesheet" type="text/css" media="screen">
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
@@ -61,10 +61,10 @@
 </table>
 
 <div id="table_search">
-	<input type="button" value="글수정" class="btn" onclick="location.href='updateForm.do?num=${board.num}&pageNum=${pageNum}';"/>
-	<input type="button" value="글삭제" class="btn" onclick="location.href='deleteForm.do?num=${board.num}&pageNum=${pageNum}'"/>
-	<input type="button" value="답글쓰기" class="btn" onclick="location.href='reWriteForm.do?reRef=${board.reRef}&reLev=${board.reLev}&reSeq=${board.reSeq}';"/>
-	<input type="button" value="목록보기" class="btn" onclick="location.href='notice.do?pageNum=${pageNum}';"/>
+	<input type="button" value="글수정" class="btn" onclick="location.href='/board/modify?num=${board.num}&pageNum=${pageNum}';"/>
+	<input type="button" value="글삭제" class="btn" onclick="location.href='/board/delete?num=${board.num}&pageNum=${pageNum}'"/>
+	<input type="button" value="답글쓰기" class="btn" onclick="location.href='/board/reply?reRef=${board.reRef}&reLev=${board.reLev}&reSeq=${board.reSeq}&pageNum=${pageNum}';"/>
+	<input type="button" value="목록보기" class="btn" onclick="location.href='/board/list?pageNum=${pageNum}';"/>
 </div>
 
 </article>

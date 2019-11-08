@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Fun Web</title>
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all">
-<link href="css/subpage.css" rel="stylesheet" type="text/css"  media="all">
-<link href="css/print.css" rel="stylesheet" type="text/css"  media="print">
-<link href="css/iphone.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/resources/css/default.css" rel="stylesheet" type="text/css" media="all">
+<link href="/resources/css/subpage.css" rel="stylesheet" type="text/css"  media="all">
+<link href="/resources/css/print.css" rel="stylesheet" type="text/css"  media="print">
+<link href="/resources/css/iphone.css" rel="stylesheet" type="text/css" media="screen">
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
@@ -34,10 +34,11 @@
     
 <h1>Notice ReWrite</h1>
 
-<form action="reWrite.do" method="post" name="frm">
-<input type="hidden" name="reRef" value="${param.reRef}">
-<input type="hidden" name="reLev" value="${param.reLev}">
-<input type="hidden" name="reSeq" value="${param.reSeq}">
+<form action="/board/reply" method="post" name="frm">
+<input type="hidden" name="pageNum" value="${pageNum}">
+<input type="hidden" name="reRef" value="${boardVO.reRef}">
+<input type="hidden" name="reLev" value="${boardVO.reLev}">
+<input type="hidden" name="reSeq" value="${boardVO.reSeq}">
 <table id="notice">
 	<tr>
 	  	<th class="twrite">이름</th>
@@ -68,7 +69,7 @@
 <div id="table_search">
 	<input type="submit" value="답글쓰기" class="btn" />
 	<input type="reset" value="다시작성" class="btn"/>
-	<input type="button" value="목록보기" class="btn" onclick="location.href='notice.do';"/>
+	<input type="button" value="목록보기" class="btn" onclick="location.href='/board/list';"/>
 </div>
 </form>
 </article>

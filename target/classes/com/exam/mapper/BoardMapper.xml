@@ -10,7 +10,7 @@
 	
 	<insert id="insertBoard">
 		INSERT INTO board (num, username, passwd, subject, content, readcount, ip, reg_date, re_ref, re_lev, re_seq)
-		VALUES (#{num}, #{username}, #{passwd}, #{subject}, #{content}, #{readcount}, #{ip}, #{regDate}, #{reRef}, #{reLev}, #{reSeq})
+		VALUES (#{num}, #{username}, #{passwd}, #{subject}, #{content}, #{readcount}, #{ip}, current_timestamp, #{reRef}, #{reLev}, #{reSeq})
 	</insert>
 
 	<select id="getBoards" resultType="BoardVO">

@@ -42,7 +42,7 @@ public class MemberController {
 	public String join(MemberVO memberVO) {
 		// 프론트컨트롤러인 DispatcherServlet이
 		// 매개변수타입 확인해서 MemberVO 객체생성후
-		// 요청 파라미터 채워서 넣어줌/
+		// 요청 파라미터 채워서 넣어줌.
 
 		// 가입날짜 생성해서 자바빈에 저장
 		memberVO.setRegDate(new Timestamp(System.currentTimeMillis()));
