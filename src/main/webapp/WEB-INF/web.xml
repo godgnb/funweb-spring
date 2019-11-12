@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+<web-app version="3.1" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_1.xsd">
 
 	<!-- 현재 web.xml이 자동로딩된 후 가장먼저 listener를 실행함 -->
 
@@ -31,7 +31,10 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
-			<!-- servlet-context.xml은 웹과 관련있는 스프링빈 등록 예: Controller(Action) 클래스가 대표적 -->
+			<!-- 
+				servlet-context.xml은 프론트컨트롤러(DispatcherServlet)가 직접 실행하는
+				웹과 관련있는 스프링빈 등록 예: Controller(Action) 클래스가 대표적 
+			-->
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

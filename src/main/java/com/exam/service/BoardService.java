@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.exam.domain.AttachVO;
 import com.exam.domain.BoardVO;
+import com.exam.mapper.AttachMapper;
 import com.exam.mapper.BoardMapper;
 
 import lombok.extern.log4j.Log4j;
@@ -18,18 +20,35 @@ public class BoardService {
 	@Autowired
 	private BoardMapper boardMapper;
 	
+	@Autowired
+	private AttachMapper attachMapper;
+	
 	// insert할 레코드의 번호 생성 메소드
 	public int nextBoardNum() {
 		int bnum = boardMapper.nextBoardNum();
 		return bnum;
-	} // nextBoardNum
+	} // nextBoardNum method
 	
 	
 	// 게시글 한개 등록하는 메소드
 	public void insertBoard(BoardVO boardVO) {
 		boardMapper.insertBoard(boardVO);
-	} // insertBoard
+	} // insertBoard method
 
+	
+	// 파일게시판 게시글 한개와 첨부파일정보 등록하는 메소드
+	public void insertBoardAndAttaches(BoardVO boardVO, List<AttachVO> attachList) {
+		// 파일게시판 주글 등록
+		boardMapper.insertBoard(boardVO);
+		
+		// 첨부파일 등록
+		if (attachList.size() > 0) { // 첨부파일 정보 있으면
+			for (AttachVO attachVO : attachList) {
+				attachMapper.insertAttach(attachVO); // 첨부파일 등록
+			}
+		}
+	} // insertBoardAndAttaches method
+	
 	
 	// 검색어로 검색된 행의 시작행번호부터 갯수만큼 가져오기(페이징)
 	public List<BoardVO> getBoards(int startRow, int pageSize, String search) {

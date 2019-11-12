@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Fun Web</title>
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all">
-<link href="css/subpage.css" rel="stylesheet" type="text/css"  media="all">
-<link href="css/print.css" rel="stylesheet" type="text/css"  media="print">
-<link href="css/iphone.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/resources/css/default.css" rel="stylesheet" type="text/css" media="all">
+<link href="/resources/css/subpage.css" rel="stylesheet" type="text/css"  media="all">
+<link href="/resources/css/print.css" rel="stylesheet" type="text/css"  media="print">
+<link href="/resources/css/iphone.css" rel="stylesheet" type="text/css" media="screen">
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
@@ -34,7 +34,7 @@
     
 <h1>File Notice Write</h1>
 
-<form action="fwrite.do" method="post" name="frm" enctype="multipart/form-data">
+<form action="/board/fileWrite" method="post" name="frm" enctype="multipart/form-data">
 <table id="notice">
 	<tr>
 	  	<th class="twrite">아이디</th>
@@ -52,7 +52,7 @@
   	<th class="twrite">파일</th>
   	<td class="left">
   		<div id="file_container">
-  			<input type="file" name="filename1" >
+  			<input type="file" name="files" multiple > <!-- accept="" 태그로 파일속성 선택 가능 -->
   		</div>
   		<button type="button" onclick="addFileElement();">파일 추가</button>
   	</td>
@@ -68,7 +68,7 @@
 <div id="table_search">
 	<input type="submit" value="글쓰기" class="btn" />
 	<input type="reset" value="다시작성" class="btn"/>
-	<input type="button" value="목록보기" class="btn" onclick="location.href='fnotice.do';"/>
+	<input type="button" value="목록보기" class="btn" onclick="location.href='/board/fileList';"/>
 </div>
 </form>
 </article>
@@ -92,7 +92,7 @@ function addFileElement() {
 	}
 	
 	// div요소에 file타입 input요소를 추가하기
-	var input = '<br><input type="file" name="filename' + num + '">';
+	var input = '<br><input type="file" name="files">';
 	num++; // 다음번 추가를 위해 값을 1증가
 	
 	// id 속성값이 file_container인 div요소의 참조 구하기

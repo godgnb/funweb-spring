@@ -4,7 +4,7 @@
 	<ul>
 		<li><a href="/board/list">Notice</a></li>
 		<li><a href="#">Public News</a></li>
-		<li><a href="fnotice.do">Driver Download</a></li>
+		<li><a href="/board/fileList">Driver Download</a></li>
 		<li><a href="#">Service Policy</a></li>
 	</ul>
 </nav>

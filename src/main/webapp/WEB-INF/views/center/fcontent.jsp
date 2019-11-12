@@ -7,10 +7,10 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Fun Web</title>
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all">
-<link href="css/subpage.css" rel="stylesheet" type="text/css"  media="all">
-<link href="css/print.css" rel="stylesheet" type="text/css"  media="print">
-<link href="css/iphone.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/resources/css/default.css" rel="stylesheet" type="text/css" media="all">
+<link href="/resources/css/subpage.css" rel="stylesheet" type="text/css"  media="all">
+<link href="/resources/css/print.css" rel="stylesheet" type="text/css"  media="print">
+<link href="/resources/css/iphone.css" rel="stylesheet" type="text/css" media="screen">
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
@@ -59,12 +59,12 @@
 	  		<c:forEach var="attach" items="${attachList}">
 	  			<c:choose>
 					<c:when test="${attach.filetype eq 'I'}"><%-- 이미지 타입 파일 --%>
-						<a href="upload/${attach.filename}">
-			  				<img src="upload/${attach.filename}" width="50" height="50"/>
+						<a href="/resources/upload/${attach.uploadpath}/${attach.uuid}_${attach.filename}">
+			  				<img src="/resources/upload/${attach.uploadpath}/s_${attach.uuid}_${attach.filename}"/>
 			  			</a>				
 					</c:when>	  			
 	  				<c:otherwise><%-- 이미지가 아닌 일반 타입 파일 --%>
-	  					<a href="upload/${attach.filename}">
+	  					<a href="javascript:location.href='/board/download?fileName=${attach.uploadpath}/${attach.uuid}_' + encodeURIComponent(${attach.filename})';">
 			  				${attach.filename}
 			  			</a><br>
 	  				</c:otherwise>
@@ -80,13 +80,13 @@
 
 <div id="table_search">
 	<c:if test="${not empty id and id eq board.username}">
-		<input type="button" value="글수정" class="btn" onclick="location.href='fupdateForm.do?num=${board.num}&pageNum=${pageNum}';"/>
+		<input type="button" value="글수정" class="btn" onclick="location.href='/board/fileModify?num=${board.num}&pageNum=${pageNum}';"/>
 		<input type="button" value="글삭제" class="btn" onclick="checkDelete();"/>
 	</c:if>
 	<c:if test="${not empty id}">
-		<input type="button" value="답글쓰기" class="btn" onclick="location.href='reWrite.do?reRef=${board.reRef}&reLev=${board.reLev}&reSeq=${board.reSeq}';"/>	
+		<input type="button" value="답글쓰기" class="btn" onclick="location.href='/board/fileReWrite?reRef=${board.reRef}&reLev=${board.reLev}&reSeq=${board.reSeq}';"/>	
 	</c:if>
-		<input type="button" value="목록보기" class="btn" onclick="location.href='fnotice.do?pageNum=${pageNum}';"/>
+		<input type="button" value="목록보기" class="btn" onclick="location.href='/board/fileList?pageNum=${pageNum}';"/>
 </div>
 
 </article>
@@ -102,7 +102,7 @@
 		var result = confirm('${board.num}번 글을 정말로 삭제하시겠습니까?');
 		
 		if (result == true) {
-			location.href='fdelete.do?num=${board.num}&pageNum=${pageNum}';
+			location.href='board/fileDelete?num=${board.num}&pageNum=${pageNum}';
 		}
 		
 	}

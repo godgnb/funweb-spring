@@ -23,6 +23,12 @@
 	
 	<context:component-scan base-package="com.exam.controller" />
 	
-	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="defaultEncoding" value="utf-8"/>
+		<beans:property name="maxUploadSize" value="104857560"/> <!-- 모든파일 크기제한 10MB = 1024 * 1024 * 10 -->
+		<beans:property name="maxUploadSizePerFile" value="2097152"/> <!-- 파일한개당 크기제한 2MB = 1024 * 1024 * 2 -->
+		<beans:property name="uploadTempDir" value="file:/E:/upload/temp"/>
+		<beans:property name="maxInMemorySize" value="104857560"/>
+	</beans:bean>
 	
 </beans:beans>

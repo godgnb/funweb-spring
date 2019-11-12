@@ -95,6 +95,22 @@
 			<version>8.0.18</version>
 		</dependency>
 
+		<!-- Apache Commons FileUpload -->
+		<!-- Servlet 3.0 이전버전은 파일업로드 라이브러리 필요
+			 이후버전은 기본적으로 업로드 기능이 추가되어있음 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<!-- thumbnailator -->
+		<dependency>
+			<groupId>net.coobird</groupId>
+			<artifactId>thumbnailator</artifactId>
+			<version>0.4.8</version>
+		</dependency>
+
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

@@ -5,8 +5,8 @@
 <mapper namespace="com.exam.mapper.AttachMapper">
 	
 	<insert id="insertAttach">
-		INSERT INTO attach (uuid, filename, filetype, bno)
-		VALUES (#{uuid}, #{filename}, #{filetype}, #{bno})
+		INSERT INTO attach (uuid, uploadpath, filename, filetype, bno)
+		VALUES (#{uuid}, #{uploadpath}, #{filename}, #{filetype}, #{bno})
 	</insert>
 	
 </mapper>
